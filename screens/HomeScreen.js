@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   postTitle: {
     color: "#888",
     fontSize: 12,
-    margin: 1,
+    margin: 5,
     padding: 1,
   },
   mailIconContainer: {
