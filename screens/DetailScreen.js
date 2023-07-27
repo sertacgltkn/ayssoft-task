@@ -18,7 +18,7 @@ const DetailScreen = () => {
           <Image source={{ uri: item.photo.url }} style={styles.avatar} />
         </View>
         <View style={styles.mailContainer}>
-          <MaterialIcons name="mail" size={24} color="#000" />
+          <MaterialIcons name="mail" size={24} color="orange" />
           <Text style={styles.email}>{item.email}</Text>
         </View>
       </View>
@@ -26,12 +26,19 @@ const DetailScreen = () => {
       <View style={styles.card}>
         <View style={styles.nameCompany}>
           <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.company}>{item.website}</Text>
+          <Text style={styles.website}>{item.website}</Text>
         </View>
-        <Text style={styles.phone}>Phone : {item.phone}</Text>
-        <Text style={styles.website}>Company : {item.company.name}</Text>
+        <Text style={styles.phone}>
+          {" "}
+          <MaterialIcons name="phone" size={24} color="orange" /> {item.phone}
+        </Text>
+        <Text style={styles.company}>
+          {" "}
+          <MaterialIcons name="business" size={24} color="orange" />{" "}
+          {item.company.name}
+        </Text>
       </View>
-      
+      <Text style={styles.postHeader}>POSTS</Text>
       <FlatList
         data={item.posts}
         keyExtractor={(post) => post.id.toString()}
@@ -48,15 +55,20 @@ const DetailScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#C9C9C9",
   },
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 15,
-    backgroundColor: "#fff",
+    padding: 10,
+    margin: 0,
+    backgroundColor: "#8C8C8C",
     borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
+    borderBottomColor: "orange",
+    borderRadius: 10,
+    borderTopStartRadius: 0,
+    borderTopEndRadius: 0,
+    elevation: 3,
   },
   avatarContainer: {
     width: 60,
@@ -65,7 +77,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginRight: 15,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#ffffff",
   },
   nameMail: {
     flexDirection: "row",
@@ -84,22 +96,26 @@ const styles = StyleSheet.create({
   },
   userInfo: {
     flex: 1,
+    alignItems: "center",
   },
   username: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 5,
+    color: "white",
   },
   email: {
     fontSize: 14,
-    color: "#555",
+    color: "white",
   },
   city: {
     fontSize: 14,
-    color: "#555",
+    color: "white",
   },
   card: {
-    backgroundColor: "#fff",
+    backgroundColor: "#8C8C8C",
+    borderWidth: 1,
+    borderColor: "#898989",
     margin: 15,
     padding: 15,
     borderRadius: 10,
@@ -108,35 +124,53 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 8,
+    marginBottom: 18,
+    color: "orange",
   },
   company: {
     fontSize: 16,
-    color: "#8B8588",
-    fontWeight: "bold",
-    marginBottom: 8,
-    borderWidth: 0.1,
-    borderColor: "#000000",
-    borderRadius: 4,
+    color: "white",
+    margin: 5,
     padding: 5,
   },
   phone: {
     fontSize: 16,
-    color: "#555",
+    color: "white",
     marginBottom: 8,
+    padding: 5,
+    margin: 5,
   },
   website: {
     fontSize: 16,
-    color: "#555",
-    marginBottom: 15,
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: 8,
+    borderWidth: 1.5,
+    borderColor: "orange",
+    borderRadius: 14,
+    padding: 10,
+    margin: 5,
   },
   postContainer: {
-    margin: 5,
+    margin: 8,
     padding: 2,
+    borderRadius: 1,
   },
   mailContainer: {
     flex: 1,
     alignItems: "center",
+  },
+  postHeader: {
+    fontSize: 20,
+    fontWeight: "bold",
+    margin: 0,
+    alignSelf: "center",
+    padding: 0,
+    color: "white",
+  },
+  postTitle: {
+    margin: 5,
+    padding: 5,
   },
 });
 
