@@ -14,10 +14,26 @@ git clone  ```  https://github.com/sertacgltkn/ayssoft-task.git ```
 
 ``` npx expo start ```
 
-##### NOT Projeyi android cihazınızda çalıştırmak için;
+##### NOT : Projeyi android cihazınızda çalıştırmak için;
 
 ``` npm install -g expo-cli ``` kurulu olmalıdır.
 
+
+- Uygulamayı çalıştırmak için android veya ios cihazınızda Expo Go uygulaması yüklü olmalıdır.
+
+- Projeyi çalıştırdıktan sonra QR kodunu okutarak uygulamayı çalıştırabilirsiniz.
+
+
+##### APK kurulumu için;
+
+- APK dosyasını indirin.
+
+``` https://expo.dev/artifacts/eas/jQZuzvzcvkRwuw2RvfAT2M.apk ```
+
+- APK dosyasını android cihazınıza kurun.
+<img src="/screenshots/13.jpg" width="400">
+<img src="/screenshots/11.jpg" width="400">
+<img src="/screenshots/12.jpg" width="400">
 
 ### Kullanılan Teknolojiler
 
@@ -31,15 +47,16 @@ git clone  ```  https://github.com/sertacgltkn/ayssoft-task.git ```
 
  #### ANDROID    
 
-![alt text](/screenshots/1.PNG?raw=true)
-![alt text](/screenshots/2.PNG?raw=true)
-![alt text](/screenshots/3.PNG?raw=true)
-![alt text](/screenshots/4.PNG?raw=true)
+<img src="/screenshots/1.png" width="400">
+<img src="/screenshots/2.png" width="400">
+<img src="/screenshots/3.png" width="400">
+<img src="/screenshots/4.png" width="400">
+
 
 #### IOS
 
-![alt text](/screenshots/5.PNG?raw=true)
-![alt text](/screenshots/7.PNG?raw=true)
-![alt text](/screenshots/6.PNG?raw=true)
+<img src="/screenshots/5.png" width="400">
+<img src="/screenshots/7.png" width="400">
+<img src="/screenshots/6.png" width="400">
 
 
