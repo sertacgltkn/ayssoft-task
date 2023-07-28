@@ -47,16 +47,16 @@ git clone  ```  https://github.com/sertacgltkn/ayssoft-task.git ```
 
  #### ANDROID    
 
-<img src="/screenshots/1.png" width="400">
-<img src="/screenshots/2.png" width="400">
-<img src="/screenshots/3.png" width="400">
-<img src="/screenshots/4.png" width="400">
+<img src="/screenshots/1.PNG" width="400">
+<img src="/screenshots/2.PNG" width="400">
+<img src="/screenshots/3.PNG" width="400">
+<img src="/screenshots/4.PNG" width="400">
 
 
 #### IOS
 
-<img src="/screenshots/5.png" width="400">
-<img src="/screenshots/7.png" width="400">
-<img src="/screenshots/6.png" width="400">
+<img src="/screenshots/5.PNG" width="400">
+<img src="/screenshots/7.PNG" width="400">
+<img src="/screenshots/6.PNG" width="400">
 
 
