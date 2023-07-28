@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, FlatList, Image, StyleSheet } from "react-native";
+import { View, Text, FlatList, Image } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
+import styles from "../styles";
 
 const DetailScreen = () => {
-  const route = useRoute();
-  const { item } = route.params;
+  const route = useRoute();  
+  const { item } = route.params; // item is the user object
 
   return (
     <View style={styles.container}>
@@ -51,127 +52,5 @@ const DetailScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#C9C9C9",
-  },
-  headerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    margin: 0,
-    backgroundColor: "#8C8C8C",
-    borderBottomWidth: 1,
-    borderBottomColor: "orange",
-    borderRadius: 10,
-    borderTopStartRadius: 0,
-    borderTopEndRadius: 0,
-    elevation: 3,
-  },
-  avatarContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    overflow: "hidden",
-    marginRight: 15,
-    borderWidth: 1,
-    borderColor: "#ffffff",
-  },
-  nameMail: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "space-between",
-  },
-  nameCompany: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "space-between",
-  },
-  avatar: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
-  },
-  userInfo: {
-    flex: 1,
-    alignItems: "center",
-  },
-  username: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 5,
-    color: "white",
-  },
-  email: {
-    fontSize: 14,
-    color: "white",
-  },
-  city: {
-    fontSize: 14,
-    color: "white",
-  },
-  card: {
-    backgroundColor: "#8C8C8C",
-    borderWidth: 1,
-    borderColor: "#898989",
-    margin: 15,
-    padding: 15,
-    borderRadius: 10,
-    elevation: 3,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 18,
-    color: "orange",
-  },
-  company: {
-    fontSize: 16,
-    color: "white",
-    margin: 5,
-    padding: 5,
-  },
-  phone: {
-    fontSize: 16,
-    color: "white",
-    marginBottom: 8,
-    padding: 5,
-    margin: 5,
-  },
-  website: {
-    fontSize: 16,
-    color: "white",
-    fontWeight: "bold",
-    marginBottom: 8,
-    borderWidth: 1.5,
-    borderColor: "orange",
-    borderRadius: 14,
-    padding: 10,
-    margin: 5,
-  },
-  postContainer: {
-    margin: 8,
-    padding: 2,
-    borderRadius: 1,
-  },
-  mailContainer: {
-    flex: 1,
-    alignItems: "center",
-  },
-  postHeader: {
-    fontSize: 20,
-    fontWeight: "bold",
-    margin: 0,
-    alignSelf: "center",
-    padding: 0,
-    color: "white",
-  },
-  postTitle: {
-    margin: 5,
-    padding: 5,
-  },
-});
 
 export default DetailScreen;

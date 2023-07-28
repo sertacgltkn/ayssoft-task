@@ -69,6 +69,20 @@ const HomeScreen = () => {
     }
   };
 
+  const handleUpdate = async (userId, updatedUserData) => {
+    try {
+      const updatedUsers = usersWithPosts.map((user) =>
+        user.id === userId ? { ...user, ...updatedUserData } : user
+      );
+  
+      await AsyncStorage.setItem("usersWithPosts", JSON.stringify(updatedUsers));
+  
+      setUsersWithPosts(updatedUsers);
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
+
   return (
     <View>
       <FlatList
@@ -78,7 +92,7 @@ const HomeScreen = () => {
           <CustomCard
             item={item}
             onPressDelete={handleDelete}
-            onPressUpdate={() => {}}
+            onPressUpdate={(userId, updatedUserData) => handleUpdate(userId, updatedUserData)}
           />
         )}
       />

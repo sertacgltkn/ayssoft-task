@@ -6,10 +6,10 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   TextInput,
-  StyleSheet,
   Dimensions,
   ScrollView,
 } from "react-native";
+import styles from "../styles";
 
 const UpdateModal = ({
   modalVisible,
@@ -20,22 +20,21 @@ const UpdateModal = ({
   const [updatedUser, setUpdatedUser] = useState(item);
   const [inputError, setInputError] = useState("");
 
-  const handleInputChange = (text, field) => {
+  const handleInputChange = (text, field) => {  // input state update
     setUpdatedUser((prevUser) => ({
       ...prevUser,
       [field]: text,
     }));
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = () => {   // if validate save users
     if (validateInputs()) {
       handleUpdateUser(updatedUser);
       setModalVisible(false);
     }
   };
 
-  const validateInputs = () => {
-    // FORM VALIDATION
+  const validateInputs = () => { // FORM VALIDATION
     if (
       updatedUser.name.trim() === "" ||
       updatedUser.email.trim() === "" ||
@@ -147,67 +146,5 @@ const UpdateModal = ({
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  modalOverlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  modalContent: {
-    alignSelf: "auto",
-    justifyContent: "center",
-    backgroundColor: "#8C8C8C",
-    margin: 20,
-    padding: 10,
-    borderWidth: 3,
-    borderColor: "white",
-    borderRadius: 15,
-    elevation: 20,
-  },
-  text: {
-    margin: 5,
-    fontWeight: "bold",
-    color: "orange",
-  },
-  headerText: {
-    fontSize: 18,
-    alignSelf: "center",
-  },
-  errorText: {
-    color: "red",
-    marginVertical: 5,
-    fontSize: 14,
-  },
-  buttonsContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    gap: 5,
-    marginTop: 15,
-  },
-  button: {
-    borderRadius: 24,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    justifyContent: "center",
-    alignItems: "center",
-    minWidth: 100,
-  },
-  closeButton: {
-    backgroundColor: "#dc3545",
-    marginRight: 10,
-  },
-  saveButton: {
-    backgroundColor: "#007bff",
-  },
-  input: {
-    margin: 5,
-    fontSize: 13,
-    borderWidth: 1,
-    borderColor: "#C9C9C9",
-    color: "white",
-    borderRadius: 14,
-    padding: 8,
-    width: 250,
-  },
-});
 
 export default UpdateModal;
