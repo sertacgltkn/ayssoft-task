@@ -6,12 +6,11 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   TextInput,
-  Dimensions,
   ScrollView,
 } from "react-native";
 import styles from "../styles";
 
-const UpdateModal = ({
+const UpdateModal = ({ // props iel state getirme
   modalVisible,
   setModalVisible,
   item,
@@ -20,21 +19,21 @@ const UpdateModal = ({
   const [updatedUser, setUpdatedUser] = useState(item);
   const [inputError, setInputError] = useState("");
 
-  const handleInputChange = (text, field) => {  // input state update
+  const handleInputChange = (text, field) => {  // input içerisindeki veriyi değiştirme
     setUpdatedUser((prevUser) => ({
       ...prevUser,
       [field]: text,
     }));
   };
 
-  const handleUpdate = () => {   // if validate save users
+  const handleUpdate = () => {  // güncellenen verilerin kayıt edilmesi
     if (validateInputs()) {
       handleUpdateUser(updatedUser);
       setModalVisible(false);
     }
   };
 
-  const validateInputs = () => { // FORM VALIDATION
+  const validateInputs = () => {  // verilerin validate işlemi 
     if (
       updatedUser.name.trim() === "" ||
       updatedUser.email.trim() === "" ||
@@ -47,21 +46,13 @@ const UpdateModal = ({
     return true;
   };
 
-  const screenHeight = Dimensions.get("window").height;
-  const modalHeight = screenHeight - 200;
-
   return (
-    <ScrollView>
-      <Modal visible={modalVisible} transparent animationType="slide">
-        <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
-          <View style={styles.modalOverlay} />
-        </TouchableWithoutFeedback>
-        <View
-          style={[
-            styles.modalContent,
-            { top: (screenHeight - modalHeight) / 2, alignItems: "center" },
-          ]}
-        >
+    <Modal visible={modalVisible} transparent animationType="slide">
+      <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+        <View style={styles.modalOverlay} />
+      </TouchableWithoutFeedback>
+      <View style={[styles.modalContent]}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <Text style={[styles.text, styles.headerText]}>Update User</Text>
 
           <View>
@@ -141,9 +132,9 @@ const UpdateModal = ({
               <Text style={{ color: "white" }}>Close</Text>
             </TouchableOpacity>
           </View>
-        </View>
-      </Modal>
-    </ScrollView>
+        </ScrollView>
+      </View>
+    </Modal>
   );
 };
 

@@ -5,28 +5,28 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import CustomCard from "../components/CustomCard";
 
 const HomeScreen = () => {
-  const [usersWithPosts, setUsersWithPosts] = useState([]);
+  const [usersWithPosts, setUsersWithPosts] = useState([]);  // verilerin tutulması
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = async () => {  // API'dan veri çekimi
     try {
-      const usersResponse = await axios.get(
+      const usersResponse = await axios.get(   // users verileri
         "https://jsonplaceholder.typicode.com/users"
       );
       const users = usersResponse.data;
       const usersWithPosts = await Promise.all(
         users.map(async (user) => {
           const postsResponse = await axios.get(
-            `https://jsonplaceholder.typicode.com/users/${user.id}/posts`
+            `https://jsonplaceholder.typicode.com/users/${user.id}/posts`   // posts verileri
           );
           const posts = postsResponse.data;
 
           const randomPhotoId = Math.floor(Math.random() * 5000) + 1;
           const photoResponse = await axios.get(
-            `https://jsonplaceholder.typicode.com/photos/${randomPhotoId}`
+            `https://jsonplaceholder.typicode.com/photos/${randomPhotoId}`  // photo verileri
           );
           const photo = photoResponse.data;
           return { ...user, posts, photo, users: users };
@@ -38,7 +38,7 @@ const HomeScreen = () => {
     }
   };
 
-  const handleDelete = async (userId) => {
+  const handleDelete = async (userId) => {  // kullanıcı silme
     try {
       Alert.alert(
         "Delete User",
@@ -50,7 +50,7 @@ const HomeScreen = () => {
           },
           {
             text: "Delete",
-            onPress: async () => {
+            onPress: async () => {    // silinen kullanıcıları storageden çıkar
               const updatedUsers = usersWithPosts.filter((user) => user.id !== userId);
 
               await AsyncStorage.setItem(
@@ -69,13 +69,13 @@ const HomeScreen = () => {
     }
   };
 
-  const handleUpdate = async (userId, updatedUserData) => {
+  const handleUpdate = async (userId, updatedUserData) => {  // kullanıcı güncelleme
     try {
       const updatedUsers = usersWithPosts.map((user) =>
         user.id === userId ? { ...user, ...updatedUserData } : user
       );
   
-      await AsyncStorage.setItem("usersWithPosts", JSON.stringify(updatedUsers));
+      await AsyncStorage.setItem("usersWithPosts", JSON.stringify(updatedUsers));  // storagede guncelleme
   
       setUsersWithPosts(updatedUsers);
     } catch (error) {

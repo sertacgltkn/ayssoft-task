@@ -12,7 +12,7 @@ const DetailScreen = () => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.userInfo}>
-          <Text style={styles.username}>{item.username}</Text>
+          <Text style={styles.detailsUsername}>{item.username}</Text>
           <Text style={styles.city}>{item.address.city}</Text>
         </View>
         <View style={styles.avatarContainer}>

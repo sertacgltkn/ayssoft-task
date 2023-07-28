@@ -15,7 +15,7 @@ const styles = {
     position: "absolute",
     top: 0,
     right: 0,
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     margin: 9,
     padding: 15,
@@ -48,8 +48,8 @@ const styles = {
     flex: 1,
     flexDirection: "row",
   },
-  username: {
-    color: "white",
+  detailsUsername: {
+    color: "orange",
     fontSize: 15,
     fontWeight: "bold",
   },
@@ -57,6 +57,7 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 8,
+    gap:15
   },
   updateButton: {
     backgroundColor: "orange",
@@ -204,9 +205,11 @@ const styles = {
   },
   modalOverlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
+    
   },
   modalContent: {
     alignSelf: "auto",
+    alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#8C8C8C",
     margin: 20,
