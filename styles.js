@@ -1,7 +1,6 @@
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: "#C9C9C9",
   },
   card: {
     margin: 10,
@@ -57,7 +56,7 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 8,
-    gap:15
+    gap: 15,
   },
   updateButton: {
     backgroundColor: "orange",
@@ -205,15 +204,15 @@ const styles = {
   },
   modalOverlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    
   },
   modalContent: {
     alignSelf: "auto",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#8C8C8C",
-    margin: 20,
-    padding: 10,
+    width: "100%",
+    height: "100%",
+    padding: 20,
     borderWidth: 3,
     borderColor: "white",
     borderRadius: 15,
@@ -257,6 +256,48 @@ const styles = {
     borderRadius: 14,
     padding: 8,
     width: 250,
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: "#C9C9C9",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+  },
+  createButton: {
+    backgroundColor: "#00bfff",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+    flex: 1,
+    marginRight: 8,
+  },
+  cancelButton: {
+    backgroundColor: "#dc3545",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+    flex: 1,
+    marginLeft: 8,
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "repeat",
+    backgroundColor: "url(../assets/icon.png)",
+    padding: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#E9E2E0",
+  },
+  newUserButton: {
+    backgroundColor: "#00bfff",
+    padding: 10,
+    borderRadius: 5,
+    margin: 10,
+  },
+  newUserButtonText: {
+    color: "#fff",
+    fontSize: 16,
   },
 };
 

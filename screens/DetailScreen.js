@@ -6,7 +6,7 @@ import styles from "../styles";
 
 const DetailScreen = () => {
   const route = useRoute();  
-  const { item } = route.params; // item is the user object
+  const { item, usersWithPosts } = route.params;// item is the user object
 
   return (
     <View style={styles.container}>
